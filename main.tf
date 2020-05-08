@@ -71,7 +71,7 @@ module "leaf_tls_self_signed_cert" {
 }
 
 data "template_file" "bastion_user_data" {
-  template = "${file("${path.module}/../../templates/best-practices-bastion-systemd.sh.tpl")}"
+  template = "${file("${path.module}/templates/best-practices-bastion-systemd.sh.tpl")}"
 
   vars = {
     name            = "${var.name}"
@@ -111,7 +111,7 @@ module "network_aws" {
 }
 
 data "template_file" "consul_user_data" {
-  template = "${file("${path.module}/../../templates/best-practices-consul-systemd.sh.tpl")}"
+  template = "${file("${path.module}/templates/best-practices-consul-systemd.sh.tpl")}"
 
   vars = {
     name             = "${var.name}"
@@ -154,7 +154,7 @@ module "consul_aws" {
 }
 
 data "template_file" "vault_user_data" {
-  template = "${file("${path.module}/../../templates/best-practices-vault-systemd.sh.tpl")}"
+  template = "${file("${path.module}/templates/best-practices-vault-systemd.sh.tpl")}"
 
   vars = {
     name            = "${var.name}"
